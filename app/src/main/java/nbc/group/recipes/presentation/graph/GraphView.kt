@@ -21,7 +21,7 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
-import nbc.group.recipes.GlideApp
+//import nbc.group.recipes.GlideApp
 import nbc.group.recipes.R
 import nbc.group.recipes.data.model.dto.Item
 import nbc.group.recipes.data.model.dto.Recipe
@@ -141,7 +141,7 @@ class GraphView : View {
             if(data.from == FROM_FIREBASE) {
                 val ralph = Firebase.storage.reference.child(data.recipeImg)
                 Log.e("URGENT_TAG", "onResourceReady: $ralph", )
-                GlideApp.with(this)
+                Glide.with(this)
                     .asBitmap()
                     .load(Firebase.storage.reference.child(data.recipeImg))
                     .into(object: CustomTarget<Bitmap>() {

@@ -14,13 +14,14 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
+import com.bumptech.glide.Glide
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import nbc.group.recipes.GlideApp
+//import nbc.group.recipes.GlideApp
 import nbc.group.recipes.R
 import nbc.group.recipes.data.model.dto.Recipe
 import nbc.group.recipes.data.model.entity.RecipeEntity
@@ -173,7 +174,7 @@ class MypageFragment : Fragment(){
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.currentUser?.let { currentUser ->
                 binding.tvUserName.text = currentUser.displayName
-                GlideApp.with(this@MypageFragment)
+                Glide.with(this@MypageFragment)
                     .load(
                         Firebase.storage.reference
                             .child("userProfile/${currentUser.uid}/profile.jpg")

@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 import nbc.group.recipes.data.model.dto.Item
 import nbc.group.recipes.data.model.dto.SearchResponse
 import nbc.group.recipes.data.model.dto.SpecialtyResponse
-import nbc.group.recipes.data.repository.RecipeSpecialtyRepository
+import nbc.group.recipes.data.repository.SpecialtyRepository
 import nbc.group.recipes.data.repository.SearchRepository
 import javax.inject.Inject
 
@@ -17,7 +17,7 @@ import javax.inject.Inject
 class MapViewModel @Inject constructor(
     private val searchRepository: SearchRepository,
 
-) : ViewModel() {
+    ) : ViewModel() {
 
     // 검색어
     private val _regionSearch = MutableStateFlow<SearchResponse?>(null)

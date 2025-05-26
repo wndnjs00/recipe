@@ -17,8 +17,8 @@ import com.google.firebase.storage.ktx.storage
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import nbc.group.recipes.BuildConfig
-import nbc.group.recipes.GlideApp
+//import nbc.group.recipes.BuildConfig
+//import nbc.group.recipes.GlideApp
 import nbc.group.recipes.R
 import nbc.group.recipes.data.model.dto.Recipe
 import nbc.group.recipes.data.model.entity.RecipeEntity
@@ -154,7 +154,7 @@ class RecipeDetailFragment : Fragment() {
         Log.e("URGENT_TAG", "bindRecipeDetail: $recipeDetail", )
         with(binding) {
             if (recipeDetail.from == FROM_FIREBASE) {
-                GlideApp.with(this@RecipeDetailFragment)
+                Glide.with(this@RecipeDetailFragment)
                     .load(
                         Firebase.storage.reference.child(recipeDetail.recipeImg)
                     )

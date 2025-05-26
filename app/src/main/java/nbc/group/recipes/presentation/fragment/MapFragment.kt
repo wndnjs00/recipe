@@ -8,12 +8,12 @@ import android.location.Geocoder
 import android.os.Bundle
 import android.os.SystemClock
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle.State.*
@@ -124,10 +124,13 @@ class MapFragment : Fragment() {
 
                 kakaomap.setOnLabelClickListener { kakaoMap, labelLayer, label ->
 
-                    val currentTime = SystemClock.elapsedRealtime()
+                    val currentTime = SystemClock.elapsedRealtime() // currentTime에 현재시점을 저장
+                    // 마지막 클릭시간인 lastClickTime과 햔재시점 currentTime의 차이를 게산 => 이 값이 3초보다 작으면 연속클릭으로 간주하여 이벤트를 종료
                     if(currentTime - lastClickTime < 3000){
+                        // 클릭 이벤트 종료
                         return@setOnLabelClickListener
                     }
+                    // 이벤트가 정상적으로 처리되었을때, lastClickTime을 현재시간으로 갱신
                     lastClickTime = currentTime
 
                     val searchText = binding.searchEt.text.toString()

@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
-import nbc.group.recipes.GlideApp
 import nbc.group.recipes.R
 import nbc.group.recipes.data.model.dto.Recipe
 import nbc.group.recipes.data.model.entity.RecipeEntity

@@ -5,9 +5,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.bumptech.glide.Glide
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
-import nbc.group.recipes.GlideApp
+//import nbc.group.recipes.GlideApp
 import nbc.group.recipes.data.model.entity.RecipeEntity
 import nbc.group.recipes.databinding.ItemMypageRecipeBinding
 import nbc.group.recipes.presentation.adapter.diff_util.RecipeDiffUtil
@@ -27,7 +28,7 @@ class MyPageRecipeAdapter(
 
     override fun onBindViewHolder(holder: MyRecipeViewHolder, position: Int) {
         val current = getItem(position)
-        GlideApp.with(fragment)
+        Glide.with(fragment)
             .load(Firebase.storage.reference.child(current.recipeImg))
             .into(holder.binding.ivRecipe)
 

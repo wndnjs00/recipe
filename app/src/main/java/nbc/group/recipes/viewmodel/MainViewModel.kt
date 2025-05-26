@@ -14,14 +14,14 @@ import nbc.group.recipes.data.model.firebase.UserMetaData
 import nbc.group.recipes.data.network.NetworkResult
 import nbc.group.recipes.data.repository.AuthRepository
 import nbc.group.recipes.data.repository.FirebaseRepository
-import nbc.group.recipes.data.repository.RecipeSpecialtyRepository
+import nbc.group.recipes.data.repository.SpecialtyRepository
 import nbc.group.recipes.data.utils.getUserProfileStoragePath
 import java.io.InputStream
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val repository: RecipeSpecialtyRepository,
+    private val repository: SpecialtyRepository,
     private val authRepository: AuthRepository,
     private val firebaseRepository: FirebaseRepository
 ): ViewModel() {

@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
-import nbc.group.recipes.GlideApp
 import nbc.group.recipes.R
 import nbc.group.recipes.data.model.entity.RecipeEntity
 import nbc.group.recipes.databinding.RecipeItemViewBinding
@@ -39,7 +38,7 @@ class RecipeAdapter(
 
             if (recipeInfo.from == FROM_FIREBASE) {
                 Log.e("URGENT_TAG", "bind: ${Firebase.storage.reference.child(item.recipeImg)}", )
-                GlideApp.with(fragment)
+                Glide.with(fragment)
                     .load(
                         Firebase.storage.reference.child(item.recipeImg)
                     )

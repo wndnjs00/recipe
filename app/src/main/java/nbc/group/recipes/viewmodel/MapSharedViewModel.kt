@@ -9,12 +9,12 @@ import kotlinx.coroutines.launch
 import nbc.group.recipes.convertToOfficial
 import nbc.group.recipes.data.model.dto.Item
 import nbc.group.recipes.data.model.dto.SpecialtyResponse
-import nbc.group.recipes.data.repository.RecipeSpecialtyRepository
+import nbc.group.recipes.data.repository.SpecialtyRepository
 import javax.inject.Inject
 
 @HiltViewModel
 class MapSharedViewModel @Inject constructor(
-    private val repository: RecipeSpecialtyRepository,
+    private val repository: SpecialtyRepository,
 ) : ViewModel(){
 
 

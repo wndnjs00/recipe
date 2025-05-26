@@ -26,5 +26,4 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun contentBanDao(): ContentBanDao
     abstract fun userBanDao(): UserBanDao
 
-
 }
